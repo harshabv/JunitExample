@@ -2,11 +2,9 @@ node {
    def mvnHome
    stage('Preparation') { // for display purposes
       // Get some code from a GitHub repository
-      git 'https://github.com/pmisarwala/JunitExample.git'
-      // Get the Maven tool.
-      // ** NOTE: This 'M3' Maven tool must be configured
-      // **       in the global configuration.           
-      mvnHome = tool 'm3'
+      git 'https://github.com/harshabv/JunitExample.git'
+      // Maven tool must be configured in the global configuration.           
+      mvnHome = tool 'maven-3.5.3'
    }
    stage('Build') {
       // Run the maven build
@@ -18,6 +16,6 @@ node {
    }
    stage('Results') {
       junit '**/target/surefire-reports/TEST-*.xml'
-      archive 'target/*.war'
+      archive 'target/*.jar'
    }
 }
