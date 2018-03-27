@@ -4,7 +4,7 @@ node {
       // Get some code from a GitHub repository
       git 'https://github.com/harshabv/JunitExample.git'
       // Maven tool must be configured in the global configuration.           
-      mvnHome = tool 'maven-3.5.3'
+      mvnHome = tool 'm3'
    }
    stage('Build') {
       // Run the maven build
